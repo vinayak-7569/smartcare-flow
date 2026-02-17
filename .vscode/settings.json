@@ -1,0 +1,6 @@
+{
+  "yaml.schemaStore.enable": false,
+  "yaml.validate": false,
+  "yaml.schemas": {}
+}
+

@@ -1,0 +1,307 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SmartCare Flow - Hospital Operations Dashboard Design System */
+
+
+@layer base {
+  :root {
+    /* Hospital-grade color palette */
+    --background: 210 40% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary: Professional medical blue */
+    --primary: 205 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 205 85% 95%;
+    --primary-dark: 205 85% 35%;
+
+    /* Secondary: Soft neutral */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 25% 25%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 50%;
+
+    --accent: 205 75% 92%;
+    --accent-foreground: 205 85% 35%;
+
+    /* Status colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 71% 95%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 95%;
+    
+    --critical: 0 84% 60%;
+    --critical-foreground: 0 0% 100%;
+    --critical-light: 0 84% 95%;
+    
+    --info: 205 85% 55%;
+    --info-foreground: 0 0% 100%;
+    --info-light: 205 85% 95%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 205 85% 45%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 210 30% 98%;
+    --sidebar-foreground: 215 25% 25%;
+    --sidebar-primary: 205 85% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 205 75% 94%;
+    --sidebar-accent-foreground: 205 85% 35%;
+    --sidebar-border: 210 20% 92%;
+    --sidebar-ring: 205 85% 45%;
+
+    /* Chart colors */
+    --chart-1: 205 85% 50%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 0 84% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(205, 85%, 50%) 0%, hsl(205, 85%, 40%) 100%);
+    --gradient-header: linear-gradient(90deg, hsl(205, 85%, 45%) 0%, hsl(200, 80%, 50%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215, 25%, 15%, 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215, 25%, 15%, 0.07), 0 2px 4px -2px hsl(215, 25%, 15%, 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(215, 25%, 15%, 0.08), 0 4px 6px -4px hsl(215, 25%, 15%, 0.05);
+    --shadow-card: 0 1px 3px 0 hsl(215, 25%, 15%, 0.06), 0 1px 2px -1px hsl(215, 25%, 15%, 0.04);
+  }
+
+  .dark {
+    --background: 215 25% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 25% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 25% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 205 85% 55%;
+    --primary-foreground: 215 25% 10%;
+    --primary-light: 205 85% 20%;
+    --primary-dark: 205 85% 65%;
+
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 205 75% 20%;
+    --accent-foreground: 205 85% 85%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 205 85% 55%;
+
+    --sidebar-background: 215 25% 8%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 205 85% 55%;
+    --sidebar-primary-foreground: 215 25% 10%;
+    --sidebar-accent: 205 75% 15%;
+    --sidebar-accent-foreground: 205 85% 85%;
+    --sidebar-border: 215 25% 18%;
+    --sidebar-ring: 205 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .dashboard-container {
+    @apply min-h-screen bg-background;
+  }
+
+  .page-header {
+    @apply mb-6;
+  }
+
+  .page-title {
+    @apply text-2xl font-semibold text-foreground tracking-tight;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-muted-foreground mt-1;
+  }
+
+  .kpi-card {
+    @apply bg-card rounded-xl p-5 border border-border shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+
+  .kpi-value {
+    @apply text-3xl font-bold text-foreground tracking-tight;
+  }
+
+  .kpi-label {
+    @apply text-sm text-muted-foreground font-medium;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-available {
+    @apply bg-success-light text-success;
+  }
+
+  .status-busy {
+    @apply bg-warning-light text-warning;
+  }
+
+  .status-critical {
+    @apply bg-critical-light text-critical;
+  }
+
+  .status-scheduled {
+    @apply bg-info-light text-info;
+  }
+
+  .ai-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium bg-primary-light text-primary;
+  }
+
+  .data-table {
+    @apply w-full text-sm;
+  }
+
+  .data-table th {
+    @apply px-4 py-3 text-left font-medium text-muted-foreground bg-muted/50 first:rounded-tl-lg last:rounded-tr-lg;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 border-b border-border;
+  }
+
+  .data-table tbody tr:hover {
+    @apply bg-muted/30;
+  }
+
+  .form-section {
+    @apply bg-card rounded-xl p-6 border border-border shadow-sm;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-1.5;
+  }
+
+  .disclaimer-note {
+    @apply text-xs text-muted-foreground bg-muted/50 rounded-lg p-3 border border-border/50;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-header {
+    background: var(--gradient-header);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .bg-success-light {
+    background-color: hsl(var(--success-light));
+  }
+
+  .text-success {
+    color: hsl(var(--success));
+  }
+
+  .bg-warning-light {
+    background-color: hsl(var(--warning-light));
+  }
+
+  .text-warning {
+    color: hsl(var(--warning));
+  }
+
+  .bg-critical-light {
+    background-color: hsl(var(--critical-light));
+  }
+
+  .text-critical {
+    color: hsl(var(--critical));
+  }
+
+  .bg-info-light {
+    background-color: hsl(var(--info-light));
+  }
+
+  .text-info {
+    color: hsl(var(--info));
+  }
+
+  .bg-primary-light {
+    background-color: hsl(var(--primary-light));
+  }
+}

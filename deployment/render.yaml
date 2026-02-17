@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=
+services:
+  - type: web
+    name: smartcare-flow-backend
+    env: docker
+    region: oregon
+    autoDeploy: true
+    dockerContext: ..
+    dockerfilePath: deployment/Dockerfile
+    healthCheckPath: /
